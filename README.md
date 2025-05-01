@@ -82,6 +82,6 @@ cd ../frontend
 npm install
 npm start
 
-The frontend should now run on: http://localhost:3002/
+The frontend should now run on: http://localhost:3000/
 
 
