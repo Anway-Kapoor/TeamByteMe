@@ -43,13 +43,13 @@ A full-stack web application that allows users to manage student profiles, assig
 
 Since the project runs locally, access it using the following local URLs after setup:
 
-- Home: [http://localhost:3002/](http://localhost:3002/)
-- Add Member: [http://localhost:3002/add](http://localhost:3002/add)
-- View Members: [http://localhost:3002/view](http://localhost:3002/view)
+- Home: [http://localhost:3000/](http://localhost:3000/)
+- Add Member: [http://localhost:3000/add](http://localhost:3000/add)
+- View Members: [http://localhost:3000/view](http://localhost:3000/view)
 - Individual Member Views:
-  - [Member 1](http://localhost:3002/member/6812f0bf197ad97027671ec4)
-  - [Member 2](http://localhost:3002/member/6812f690197ad97027671ed4)
-  - [Member 3](http://localhost:3002/member/6812f76a197ad97027671edc)
+  - [Member 1](http://localhost:3000/member/6813c30dc4b170b02a1ba9ce)
+  - [Member 2](http://localhost:3000/member/6813c36cc4b170b02a1ba9dc)
+  - [Member 3](http://localhost:3000/member/6813c391c4b170b02a1ba9e4)
 
 ---
 
@@ -63,8 +63,7 @@ Since the project runs locally, access it using the following local URLs after s
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shreyashsingh4/student-team-members-app.git
-cd student-team-members-app
+git clone https://github.com/Anway-Kapoor/TeamByteMe.git
 
 2. Backend Setup
 cd backend

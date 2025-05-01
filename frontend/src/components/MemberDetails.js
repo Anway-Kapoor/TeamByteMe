@@ -15,6 +15,15 @@ function MemberDetails() {
 
   return (
     <div className="container">
+      <div className="page-header">
+        <h2>Member Details</h2>
+        <div className="page-nav">
+          <Link to="/" className="btn">Home</Link>
+          <Link to="/view" className="btn">All Members</Link>
+          <Link to="/add" className="btn">Add Member</Link>
+        </div>
+      </div>
+      
       {member ? (
         <div className="member-details">
           <h2>{member.name}</h2>
@@ -29,8 +38,6 @@ function MemberDetails() {
             <strong>Email:</strong>
             <span>{member.email}</span>
           </div>
-          
-          <Link to="/view" className="back-link">← Back to All Members</Link>
         </div>
       ) : (
         <p>Loading...</p>

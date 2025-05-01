@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../style.css";
 
 function AddMember() {
@@ -36,9 +36,15 @@ function AddMember() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <div className="page-header">
         <h2>Add New Team Member</h2>
-        
+        <div className="page-nav">
+          <Link to="/" className="btn">Home</Link>
+          <Link to="/view" className="btn">View All Members</Link>
+        </div>
+      </div>
+      
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Full Name</label>
           <input
@@ -82,7 +88,7 @@ function AddMember() {
           />
         </div>
         
-        <button type="submit" disabled={loading}>
+        <button type="submit" className="btn" disabled={loading}>
           {loading ? "Adding..." : "Add Member"}
         </button>
       </form>

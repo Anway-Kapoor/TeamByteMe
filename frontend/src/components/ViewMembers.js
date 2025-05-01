@@ -14,18 +14,29 @@ function ViewMembers() {
 
   return (
     <div className="container">
-      <h2>All Team Members</h2>
+      <div className="page-header">
+        <h2>All Team Members</h2>
+        <div className="page-nav">
+          <Link to="/" className="btn">Home</Link>
+          <Link to="/add" className="btn">Add New Member</Link>
+        </div>
+      </div>
+      
       <div className="cards">
-        {members.map(member => (
-          <div key={member._id} className="card">
-            <img src={`http://localhost:5000/uploads/${member.image}`} alt={member.name} />
-            <div className="card-content">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-              <Link to={`/member/${member._id}`} className="btn">View Details</Link>
+        {members.length > 0 ? (
+          members.map(member => (
+            <div key={member._id} className="card">
+              <img src={`http://localhost:5000/uploads/${member.image}`} alt={member.name} />
+              <div className="card-content">
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+                <Link to={`/member/${member._id}`} className="btn">View Details</Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>No team members found. Add some members to get started!</p>
+        )}
       </div>
     </div>
   );
