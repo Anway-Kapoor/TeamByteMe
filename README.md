@@ -51,6 +51,12 @@ Since the project runs locally, access it using the following local URLs after s
   - [Member 2](http://localhost:3000/member/6813c36cc4b170b02a1ba9dc)
   - [Member 3](http://localhost:3000/member/6813c391c4b170b02a1ba9e4)
 
+### API Endpoints
+
+You can also check members directly through the API:
+- Get all members: [http://localhost:5000/api/members](http://localhost:5000/api/members)
+- Get member by ID: [http://localhost:5000/api/members/:id](http://localhost:5000/api/members/:id)
+
 ---
 
 ## ⚙️ Installation & Setup Instructions
