@@ -7,7 +7,8 @@ function ViewMembers() {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/members")
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000/api/members";
+    axios.get(apiUrl)
       .then(res => setMembers(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -26,7 +27,7 @@ function ViewMembers() {
         {members.length > 0 ? (
           members.map(member => (
             <div key={member._id} className="card">
-              <img src={`http://localhost:5000/uploads/${member.image}`} alt={member.name} />
+              <img src={`${process.env.REACT_APP_API_URL?.replace('/api/members', '') || "http://localhost:5000"}/uploads/${member.image}`} alt={member.name} />
               <div className="card-content">
                 <h3>{member.name}</h3>
                 <p>{member.role}</p>

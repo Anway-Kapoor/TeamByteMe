@@ -8,7 +8,8 @@ function MemberDetails() {
   const [member, setMember] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/members/${id}`)
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000/api/members";
+    axios.get(`${apiUrl}/${id}`)
       .then(res => setMember(res.data))
       .catch(err => console.error(err));
   }, [id]);
@@ -27,7 +28,7 @@ function MemberDetails() {
       {member ? (
         <div className="member-details">
           <h2>{member.name}</h2>
-          <img src={`http://localhost:5000/uploads/${member.image}`} alt={member.name} />
+          <img src={`${process.env.REACT_APP_API_URL?.replace('/api/members', '') || "http://localhost:5000"}/uploads/${member.image}`} alt={member.name} />
           
           <div className="member-info">
             <strong>Role:</strong>

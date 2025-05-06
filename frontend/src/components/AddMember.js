@@ -22,8 +22,8 @@ function AddMember() {
     formData.append("image", image);
 
     try {
-      // Use environment variable or relative URL
-      const apiUrl = process.env.REACT_APP_API_URL || "/api/members";
+      // Use environment variable with full URL as fallback
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000/api/members";
       await axios.post(apiUrl, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
