@@ -1,9 +1,30 @@
 services:
   - type: web
-    name: student-team-members
+    name: student-team-members-frontend
     env: static
-    buildCommand: cd frontend && npm install && npm run build
+    buildCommand: npm install && npm run install-frontend && npm run build-frontend
     staticPublishPath: ./frontend/build
     envVars:
       - key: NODE_ENV
         value: production
+      - key: REACT_APP_API_URL
+        value: https://student-team-members-backend.onrender.com
+
+  - type: web
+    name: student-team-members-backend
+    env: node
+    buildCommand: npm install && npm run install-backend
+    startCommand: npm run start-backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: student-team-members-db
+          property: connectionString
+      - key: FRONTEND_URL
+        value: https://student-team-members-frontend.onrender.com
+
+databases:
+  - name: student-team-members-db
+    plan: free
